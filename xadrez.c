@@ -1,32 +1,152 @@
-#include <stdio.h>
+#include<stdio.h>
 
-// Desafio de Xadrez - MateCheck
-// Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
-// O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
+void direita(int casas){
+  if (casas > 0){
+  printf("Direita\n");
+  direita (casas - 1);
+  }
+}
+void esquerda(int casas){
+  if (casas > 0){
+  printf("Esquerda\n");
+  esquerda (casas - 1);
+  }
+}
+void cima(int casas){
+  if (casas > 0){
+  printf("Cima\n");
+  cima (casas - 1);
+  }
+}
+void baixo(int casas){
+  if (casas > 0){
+  printf("Baixo\n");
+  baixo (casas - 1);
+  }
+}
+void diagonald(int casas){
+  if (casas > 0){
+  printf("Cima, direita\n");
+  diagonald (casas - 1);
+  }
+}
+void diagonale(int casas){
+  if (casas > 0){
+  printf("Cima, esquerda\n");
+  diagonale (casas - 1);
+  }
+}
+int main (){
+ 
 
-int main() {
-    // Nível Novato - Movimentação das Peças
-    // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
+    int i=0, peca, casas, direcaoc,sentidoc;
 
-    // Implementação de Movimentação do Bispo
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
+  printf("escolha uma peca de xadrez\n");
+  printf("1 torre\n");
+  printf("2 rainha\n");
+  printf("3 bispo\n");
+  printf("4 cavalo\n");
+  scanf("%d", &peca);
 
-    // Implementação de Movimentação da Torre
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Torre para a direita.
+  switch (peca)
+   {   
 
-    // Implementação de Movimentação da Rainha
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
+   case 1:
+     printf("Voce escolheu a torre\n");
+     printf("quantas casas deseja andar?\n");
+     scanf("%d", &casas);
+     printf("Qual o sentido voce gostaria de andar?\n");
+     printf("1 Direita\n");
+     printf("2 Esquerda\n");
+     printf("3 Cima\n");
+     printf("4 Baixo\n");
 
-    // Nível Aventureiro - Movimentação do Cavalo
-    // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
-    // Um loop pode representar a movimentação horizontal e outro vertical.
+     scanf("%d", &direcaoc);
+     if (direcaoc==1){
+      direita(casas);
+     }else if(direcaoc==2){
+      esquerda(casas);
+     }else if(direcaoc==3){
+      cima(casas);
+     }else if(direcaoc==4){
+      baixo(casas);}
+    
+     
+    break;
+  
+   case 2:
+     printf("Voce escolheu a rainha\n");
+     printf("quantas casas deseja andar?\n");
+     scanf("%d", &casas);
+     printf("Qual o sentido voce gostaria de andar?\n");
+     printf("1 Direita\n");
+     printf("2 Esquerda\n");
+     printf("3 Cima\n");
+     printf("4 Baixo\n");
 
-    // Nível Mestre - Funções Recursivas e Loops Aninhados
-    // Sugestão: Substitua as movimentações das peças por funções recursivas.
-    // Exemplo: Crie uma função recursiva para o movimento do Bispo.
+     scanf("%d", &direcaoc);
+     if (direcaoc==1){
+      direita(casas);
+     }else if(direcaoc==2){
+      esquerda(casas);
+     }else if(direcaoc==3){
+      cima(casas);
+     }else if(direcaoc==4){
+      baixo(casas);}
+    
+     
+    break;
 
-    // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
-    // Inclua o uso de continue e break dentro dos loops.
+   case 3:
+     printf("Voce escolheu o bispo\n");
+     printf("quantas casas deseja andar?\n");
+     scanf("%d", &casas);
+     printf("Qual o sentido voce gostaria de andar?\n");
+     printf("1 Diagonal direita\n");
+     printf("2 Diagonal esquerda\n");
+     scanf("%d", &direcaoc);
 
-    return 0;
+     if (direcaoc==1){
+      diagonald(casas);
+     }else if(direcaoc==2){
+      diagonale(casas);}
+
+    break;
+
+    case 4:
+     printf("Voce escolheu o cavalo\n");
+     printf("Escolha a diretacao que o cavalo ira andar?\n");
+     printf("1 cima\n");
+     printf("2 baixo\n");
+     printf("3 esquerda\n");
+     printf("4 direita\n");
+     scanf("%d", &direcaoc);
+
+      printf("Escolha a direcao que o cavalo ira vira:\n");
+      printf("1 esquerda\n");
+      printf("2 direita\n");
+      scanf("%d", &sentidoc);
+      for ( i = 0; i < 2; i++)
+      {
+         if (direcaoc == 1) {
+           printf("cima\n");
+         }else if (direcaoc == 2){
+          printf("baixo\n");
+         }else if (direcaoc == 3){
+           printf("esquerda\n");
+         }else if(direcaoc == 4){
+           printf("direita\n");
+         }      
+      }
+      if (sentidoc ==1){
+        printf("esquerda\n");
+      }else{
+        printf("direita\n");
+      }
+     
+    break;
+  default:
+    break;
+  }
+    
 }
