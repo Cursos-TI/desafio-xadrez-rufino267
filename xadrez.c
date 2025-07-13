@@ -22,7 +22,7 @@ for ( int i = 0; i < casas; i++)
 int main (){
  
 
-    int i=0, peca, casas, direcaoc,sentidoc, sentido;
+    int peca, casas, direcaoc,sentidoc, sentido;
 
   printf("escolha uma peca de xadrez\n");
   printf("1 torre\n");
@@ -31,16 +31,22 @@ int main (){
   printf("4 cavalo\n");
   scanf("%d", &peca);
 
-  printf("quantas casas deseja andar?\n");
-  scanf("%d", &casas);
-
   if (peca ==3 )
   {
+    printf("quantas casas deseja andar?\n");
+    scanf("%d", &casas);
     printf("Qual o sentido voce gostaria de andar?\n");
     printf("5 Diagonal direita\n");
     printf("6 Diagonal esquerda\n");
     scanf("%d", &sentido);
+
+  }else if (peca ==4 ) {
+    
+  printf("\n");
+
   }else {  
+  printf("quantas casas deseja andar?\n");
+  scanf("%d", &casas);
   printf("Qual o sentido voce gostaria de andar?\n");
   printf("1 Direita\n");
   printf("2 Esquerda\n");
@@ -86,7 +92,7 @@ int main (){
       printf("1 esquerda\n");
       printf("2 direita\n");
       scanf("%d", &sentidoc);
-      for ( i = 0; i < 2; i++)
+      for ( int i = 0; i < 2; i++)
       {
          if (direcaoc == 1) {
            printf("cima\n");
