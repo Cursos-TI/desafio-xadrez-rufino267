@@ -1,45 +1,28 @@
 #include<stdio.h>
 
-void direita(int casas){
-  if (casas > 0){
-  printf("Direita\n");
-  direita (casas - 1);
-  }
+void movimento(int casas, int sentido){
+for ( int i = 0; i < casas; i++)
+{
+      if (sentido==1){
+      printf("Direita\n");
+     }else if(sentido==2){
+      printf("Esquerda\n");
+     }else if(sentido==3){
+      printf("Cima\n");
+     }else if(sentido==4){
+      printf("Baixo\n");
+      }else if(sentido==5){
+      printf("Cima, direita\n");
+      }else if(sentido==6){
+      printf("Cima, esquerda\n");
 }
-void esquerda(int casas){
-  if (casas > 0){
-  printf("Esquerda\n");
-  esquerda (casas - 1);
-  }
 }
-void cima(int casas){
-  if (casas > 0){
-  printf("Cima\n");
-  cima (casas - 1);
-  }
 }
-void baixo(int casas){
-  if (casas > 0){
-  printf("Baixo\n");
-  baixo (casas - 1);
-  }
-}
-void diagonald(int casas){
-  if (casas > 0){
-  printf("Cima, direita\n");
-  diagonald (casas - 1);
-  }
-}
-void diagonale(int casas){
-  if (casas > 0){
-  printf("Cima, esquerda\n");
-  diagonale (casas - 1);
-  }
-}
+
 int main (){
  
 
-    int i=0, peca, casas, direcaoc,sentidoc;
+    int i=0, peca, casas, direcaoc,sentidoc, sentido;
 
   printf("escolha uma peca de xadrez\n");
   printf("1 torre\n");
@@ -48,68 +31,45 @@ int main (){
   printf("4 cavalo\n");
   scanf("%d", &peca);
 
+  printf("quantas casas deseja andar?\n");
+  scanf("%d", &casas);
+
+  if (peca ==3 )
+  {
+    printf("Qual o sentido voce gostaria de andar?\n");
+    printf("5 Diagonal direita\n");
+    printf("6 Diagonal esquerda\n");
+    scanf("%d", &sentido);
+  }else {  
+  printf("Qual o sentido voce gostaria de andar?\n");
+  printf("1 Direita\n");
+  printf("2 Esquerda\n");
+  printf("3 Cima\n");
+  printf("4 Baixo\n");
+  scanf("%d", &sentido);
+  };
+
   switch (peca)
    {   
 
    case 1:
      printf("Voce escolheu a torre\n");
-     printf("quantas casas deseja andar?\n");
-     scanf("%d", &casas);
-     printf("Qual o sentido voce gostaria de andar?\n");
-     printf("1 Direita\n");
-     printf("2 Esquerda\n");
-     printf("3 Cima\n");
-     printf("4 Baixo\n");
-
-     scanf("%d", &direcaoc);
-     if (direcaoc==1){
-      direita(casas);
-     }else if(direcaoc==2){
-      esquerda(casas);
-     }else if(direcaoc==3){
-      cima(casas);
-     }else if(direcaoc==4){
-      baixo(casas);}
     
+     movimento(casas,sentido);
      
     break;
   
    case 2:
      printf("Voce escolheu a rainha\n");
-     printf("quantas casas deseja andar?\n");
-     scanf("%d", &casas);
-     printf("Qual o sentido voce gostaria de andar?\n");
-     printf("1 Direita\n");
-     printf("2 Esquerda\n");
-     printf("3 Cima\n");
-     printf("4 Baixo\n");
-
-     scanf("%d", &direcaoc);
-     if (direcaoc==1){
-      direita(casas);
-     }else if(direcaoc==2){
-      esquerda(casas);
-     }else if(direcaoc==3){
-      cima(casas);
-     }else if(direcaoc==4){
-      baixo(casas);}
     
+     movimento(casas,sentido);
      
     break;
 
    case 3:
      printf("Voce escolheu o bispo\n");
-     printf("quantas casas deseja andar?\n");
-     scanf("%d", &casas);
-     printf("Qual o sentido voce gostaria de andar?\n");
-     printf("1 Diagonal direita\n");
-     printf("2 Diagonal esquerda\n");
-     scanf("%d", &direcaoc);
-
-     if (direcaoc==1){
-      diagonald(casas);
-     }else if(direcaoc==2){
-      diagonale(casas);}
+   
+     movimento(casas,sentido);
 
     break;
 
